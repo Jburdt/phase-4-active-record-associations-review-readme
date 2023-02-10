@@ -1,3 +1,12 @@
+puts( "Seeding data!")
+
+puts( "Destroying data!")
+Author.destroy_all
+Post.destroy_all
+Tag.destroy_all
+Profile.destroy_all
+PostTag.destroy_all
+
 author1 = Author.create(name: "Leeroy Jenkins")
 author2 = Author.create(name: Faker::Name.unique.name)
 author3 = Author.create(name: Faker::Name.unique.name)
@@ -23,3 +32,5 @@ PostTag.create(post_id: post3.id, tag_id: tag2.id)
 
 PostTag.create(post_id: post4.id, tag_id: tag2.id)
 PostTag.create(post_id: post4.id, tag_id: tag3.id)
+
+puts("Done Seeding!")
